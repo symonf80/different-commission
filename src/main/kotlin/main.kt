@@ -6,9 +6,9 @@ fun main() {
 
     val rezultCommision = countCommision(cardType, prevTransition, currentTransition)
     if (rezultCommision == -1.0) {
-        println("Ïðåâûøåí ëèìèò ïåðåâîäà ïî êàðòå $cardType")
+        println("ÐŸÑ€ÐµÐ²Ñ‹ÑˆÐµÐ½ Ð»Ð¸Ð¼Ð¸Ñ‚ Ð¿ÐµÑ€ÐµÐ²Ð¾Ð´Ð° Ð¿Ð¾ ÐºÐ°Ñ€Ñ‚Ðµ $cardType")
     } else
-        println("Êîìèññèÿ ñ ñóììû $currentTransition ïî êàðòå $cardType $rezultCommision ðóá.")
+        println("ÐšÐ¾Ð¼Ð¸ÑÑÐ¸Ñ Ñ ÑÑƒÐ¼Ð¼Ñ‹ $currentTransition Ð¿Ð¾ ÐºÐ°Ñ€Ñ‚Ðµ $cardType $rezultCommision Ñ€ÑƒÐ±.")
 }
 
 fun countCommision(cardType: String, prevTransition: Double, currentTransition: Double): Double {
@@ -21,7 +21,7 @@ fun countCommision(cardType: String, prevTransition: Double, currentTransition: 
     val monthLyLimitVk = 40_000.0
     var result = when (cardType) {
         "MasterCard", "Maestro" -> if (currentTransition < 75000.0) 0.0 else (currentTransition / 100 * 0.6) + 20.0
-        "Visa", "Ìèð" -> if ((currentTransition / 100 * 0.75) < minCoast) minCoast else (currentTransition / 100 * 0.75)
+        "Visa", "ÐœÐ¸Ñ€" -> if ((currentTransition / 100 * 0.75) < minCoast) minCoast else (currentTransition / 100 * 0.75)
         else -> if (currentTransition > oneLimitVk || prevTransition > monthLyLimitVk) limitMessage else 0.0
 
     }
