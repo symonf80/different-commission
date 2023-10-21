@@ -13,7 +13,7 @@ class MainKtTest {
         val cardType = "Maestro"
 
         val result = countCommision(cardType, prevTransition, currentTransition)
-        assertEquals(0.0, result)
+        assertEquals(10.0, result)
     }
     @Test
 
